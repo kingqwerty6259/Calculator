@@ -19,20 +19,30 @@ def doMath():
         print("Invalid Input")
         return
     if equation == "/":
-        if num1 == "0":
-            return
-        elif num2 == "0":
+        if num2 == "0":
+            print("Division by 0 isn't possible")
             return
 
+    if ('.' in num1):
+        num1 = float(num1)
+
+
+    if('.' in num2):
+        num2 = float(num2)
+
+    if(num1 != float(num1)):
+        num1 = int(num1)
+    if(num2 != float(num2)):
+        num2 = int(num2)
 
     if (equation == "+"):
-        print (int(num1), "+", int(num2), "=", int(num1)+int(num2))
+        print (num1, "+", num2, "=", num1 + num2)
     elif (equation == "-"):
-        print (int(num1), "-", int(num2), "=", int(num1)-int(num2))
+        print (num1, "-", num2, "=", num1 - num2)
     elif (equation == "*"):
-        print (int(num1), "x", int(num2), "=", int(num1)*int(num2))
+        print (num1, "x", num2, "=", num1 * num2)
     elif (equation == "/"):
-        print (int(num1), "/", int(num2), "=", int(num1)/int(num2))
+        print(num1, "/", num2, "=", num1/num2)
     else:
         print("Invalid Response")
 
